@@ -1,11 +1,20 @@
 body{
     display: block;
     margin: 8px;
+    background-color: #000;
 }
 
 h2{
-    color: blue;
+    color: rgb(246, 249, 251);
     text-align: center;
+
+}
+
+li {
+    color: rgb(246, 249, 251);
+    text-align: center;
+    font-size: 22px;
+    list-style: none;
 
 }
 
@@ -24,10 +33,10 @@ h2{
     align-items: center;
     position: relative;
     text-decoration: none;
-    width: 300px;
-    height: 100px;
-    font-size: 24px;
-    color: #555;
+    width: 600px;
+    height: 300px;
+    font-size: 50px;
+    color: #000;
     letter-spacing: 8px;
     font-family: 'Kite One', sans-serif;
     text-shadow: 1px 1px 2px transparent,
@@ -43,8 +52,8 @@ h2{
         -1px 1px 50px var(--color_6),
         1px -1px 50px var(--color_6);
     box-sizing: border-box;
-    border-radius: 12px;
-    border: solid 2px #555;
+    border-radius: 20px;
+    border: solid 5px #000;
     box-shadow: 0 0 4px transparent,
         0 0 4px transparent inset,
         0 0 20px var(--color_4),
@@ -83,8 +92,8 @@ CSS アニメーションの中間ステップを制御します。これによ�
             -1px -1px 50px var(--color_6),
             -1px 1px 50px var(--color_6),
             1px -1px 50px var(--color_6);
-        color: #555;
-        border-color: #555;
+        color: #000;
+        border-color: #000;
     }
 /* 2％は0％と変わらない */
     2% {
@@ -350,7 +359,7 @@ CSS アニメーションの中間ステップを制御します。これによ�
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #111;
+    background: #000;
     position: relative;
 }
 
@@ -358,3 +367,112 @@ CSS アニメーションの中間ステップを制御します。これによ�
     margin-bottom: 40px;
 }
 
+
+
+@keyframes fireworks-animation {
+    0% {
+        transform: translate(-50%, 90vh);
+        width: 4px;
+        opacity: 1;
+    }
+
+    50% {
+        width: 4px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 600px;
+        opacity: 0;
+    }
+}
+
+.c-firework,
+.c-firework::before,
+.c-firework::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, yellow 10px, #000 0) 50% 00%,
+        radial-gradient(circle, khaki 10px, #000 0) 00% 50%,
+        radial-gradient(circle, white 10px, #000 0) 50% 99%,
+        radial-gradient(circle, lime 10px, #000 0) 99% 50%,
+        radial-gradient(circle, crimson 10px, #000 0) 80% 90%,
+        radial-gradient(circle, red 10px, #000 0) 95% 90%,
+        radial-gradient(circle, yellow 10px, #000 0) 10% 60%,
+        radial-gradient(circle, khaki 10px, #000 0) 31% 80%,
+        radial-gradient(circle, white 10px, #000 0) 80% 10%,
+        radial-gradient(circle, lime 10px, #000 0) 90% 23%,
+        radial-gradient(circle, crimson 10px, #000 0) 45% 20%,
+        radial-gradient(circle, red 10px, #000 0) 13% 24%;
+    background-size: 8px 8px;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+    animation: fireworks-animation 4s infinite;
+}
+
+.c-firework::before {
+    transform: translate(-50%, -50%) rotate(25deg) !important;
+}
+
+.c-firework::after {
+    transform: translate(-50%, -50%) rotate(-37deg) !important;
+}
+
+.c-firework:nth-of-type(2),
+.c-firework:nth-of-type(2)::before,
+.c-firework:nth-of-type(2)::after {
+    top: 30%;
+    left: 16%;
+    animation-duration: 3.8s;
+}
+
+.c-firework:nth-of-type(3),
+.c-firework:nth-of-type(3)::before,
+.c-firework:nth-of-type(3)::after {
+    top: 10%;
+    left: 72%;
+    animation-duration: 4.2s;
+}
+
+.c-firework:nth-of-type(4),
+.c-firework:nth-of-type(4)::before,
+.c-firework:nth-of-type(4)::after {
+    top: 28%;
+    left: 32%;
+    animation-duration: 3.6s;
+}
+
+.c-firework:nth-of-type(5),
+.c-firework:nth-of-type(5)::before,
+.c-firework:nth-of-type(5)::after {
+    top: 32%;
+    left: 84%;
+    animation-duration: 4.4s;
+}
+
+.c-firework:nth-of-type(6),
+.c-firework:nth-of-type(6)::before,
+.c-firework:nth-of-type(6)::after {
+    top: 38%;
+    left: 40%;
+    animation-duration: 4.1s;
+}
+
+.c-firework:nth-of-type(7),
+.c-firework:nth-of-type(7)::before,
+.c-firework:nth-of-type(7)::after {
+    top: 28%;
+    left: 64%;
+    animation-duration: 3.9s;
+}
+
+.c-firework:nth-of-type(8),
+.c-firework:nth-of-type(8)::before,
+.c-firework:nth-of-type(8)::after {
+    top: 30%;
+    left: 56%;
+    animation-duration: 3.9s;
+}
