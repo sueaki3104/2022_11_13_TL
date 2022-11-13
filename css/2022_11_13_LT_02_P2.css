@@ -1,0 +1,456 @@
+body{
+    background-color: black;
+    padding: 60px;
+}
+
+h2{
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+p {
+    color: white;
+    text-align: center;
+}
+
+.slide_me {
+    /*変化の時間*/
+    width: 100%;
+    height: 300px;
+    background-image: url(../picture/profile01.jpg);
+    background-repeat: repeat-x;
+    background-size: auto 300px;
+    /*変化の時間*/
+    transition-duration: 0.5s;    
+    /* 画像ループの長さ */
+    animation: loop 80s linear infinite;
+}
+
+.slide_me:hover {
+    /*画像の拡大*/
+    transform: scale(1.5, 1.5);
+    /*カーソルをポインターにする*/
+    cursor: pointer;
+}
+
+.slide_hobby1 {
+    width: 100%;
+    height: 150px;
+    background-image: url(../picture/profile04.jpg);
+    background-repeat: repeat-x;
+    background-size: auto 150px;
+    transition-duration: 0.5s;
+    animation: loop 80s linear infinite;
+}
+
+.slide_hobby1:hover {
+    transform: scale(2, 2);
+    cursor: pointer;
+}
+
+
+.slide_hobby2 {
+    width: 100%;
+    height: 150px;
+    background-image: url(../picture/profile05.jpg);
+    background-repeat: repeat-x;
+    background-size: auto 150px;
+    transition-duration: 0.5s;
+    animation: loop 80s linear infinite;
+}
+
+.slide_hobby2:hover {
+    transform: scale(2, 2);
+    cursor: pointer;
+}
+
+
+.slide_family {
+    width: 100%;
+    height: 200px;
+    background-image: url(../picture/profile02.jpg);
+    background-repeat: repeat-x;
+    background-size: auto 200px;
+    transition-duration: 0.5s;
+    animation: loop 80s linear infinite;
+}
+
+.slide_family:hover {
+    transform: scale(1.5, 1.5);
+    cursor: pointer;
+    }
+
+.slide_school {
+    width: 100%;
+    height: 200px;
+    background-image: url(../picture/profile03.jpg);
+    background-repeat: repeat-x;
+    background-size: auto 200px;
+    transition-duration: 0.5s;
+    animation: loop 80s linear infinite;
+}
+
+.slide_school:hover {
+    transform: scale(2.0, 2.0);
+    cursor: pointer;
+}
+
+
+@keyframes loop {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -2000px 0;
+        /* 画像のマイナス幅 */
+    }
+}
+
+
+
+.button--1 {
+    --color_1: rgba(30, 255, 50, .8);
+    --color_2: rgba(30, 255, 50, .6);
+    --color_3: rgba(30, 255, 50, .3);
+    --color_4: rgba(30, 255, 50, 0);
+    --color_5: rgba(10, 150, 0, .3);
+    --color_6: rgba(10, 150, 0, 0);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    width: auto;
+    height: 64px;
+    font-size: 24px;
+    padding: 20px;
+    color: #555;
+    letter-spacing: 8px;
+    font-family: 'Kite One', sans-serif;
+    text-shadow: 1px 1px 2px transparent,
+        -1px -1px 2px transparent,
+        -1px 1px 2px transparent,
+        1px -1px 2px transparent,
+        1px 1px 30px var(--color_4),
+        -1px -1px 30px var(--color_4),
+        -1px 1px 30px var(--color_4),
+        1px -1px 30px var(--color_4),
+        1px 1px 50px var(--color_6),
+        -1px -1px 50px var(--color_6),
+        -1px 1px 50px var(--color_6),
+        1px -1px 50px var(--color_6);
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: solid 2px #555;
+    box-shadow: 0 0 4px transparent,
+        0 0 4px transparent inset,
+        0 0 20px var(--color_4),
+        0 0 20px var(--color_4) inset,
+        0 0 48px var(--color_6),
+        0 0 64px var(--color_6) inset;
+}
+
+.button:hover {
+    animation: lights 1.4s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes lights {
+    0% {
+        box-shadow: 0 0 4px transparent,
+            0 0 4px transparent inset,
+            0 0 20px var(--color_4),
+            0 0 20px var(--color_4) inset,
+            0 0 48px var(--color_6),
+            0 0 64px var(--color_6) inset;
+        text-shadow: 1px 1px 2px transparent,
+            -1px -1px 2px transparent,
+            -1px 1px 2px transparent,
+            1px -1px 2px transparent,
+            1px 1px 30px var(--color_4),
+            -1px -1px 30px var(--color_4),
+            -1px 1px 30px var(--color_4),
+            1px -1px 30px var(--color_4),
+            1px 1px 50px var(--color_6),
+            -1px -1px 50px var(--color_6),
+            -1px 1px 50px var(--color_6),
+            1px -1px 50px var(--color_6);
+        color: #555;
+        border-color: #555;
+    }
+
+    2% {
+        box-shadow: 0 0 4px transparent,
+            0 0 4px transparent inset,
+            0 0 20px var(--color_4),
+            0 0 20px var(--color_4) inset,
+            0 0 48px var(--color_6),
+            0 0 64px var(--color_6) inset;
+        text-shadow: 1px 1px 2px transparent,
+            -1px -1px 2px transparent,
+            -1px 1px 2px transparent,
+            1px -1px 2px transparent,
+            1px 1px 30px var(--color_4),
+            -1px -1px 30px var(--color_4),
+            -1px 1px 30px var(--color_4),
+            1px -1px 30px var(--color_4),
+            1px 1px 50px var(--color_6),
+            -1px -1px 50px var(--color_6),
+            -1px 1px 50px var(--color_6),
+            1px -1px 50px var(--color_6);
+        color: #555;
+        border-color: #555;
+    }
+
+    3% {
+        box-shadow: 0 0 4px var(--color_1),
+            0 0 4px var(--color_1) inset,
+            0 0 20px var(--color_2),
+            0 0 20px var(--color_2) inset,
+            0 0 48px var(--color_5),
+            0 0 64px var(--color_5) inset;
+        text-shadow: 1px 1px 2px var(--color_1),
+            -1px -1px 2px var(--color_1),
+            -1px 1px 2px var(--color_1),
+            1px -1px 2px var(--color_1),
+            1px 1px 30px var(--color_3),
+            -1px -1px 30px var(--color_3),
+            -1px 1px 30px var(--color_3),
+            1px -1px 30px var(--color_3),
+            1px 1px 50px var(--color_5),
+            -1px -1px 50px var(--color_5),
+            -1px 1px 50px var(--color_5),
+            1px -1px 50px var(--color_5);
+        color: #fff;
+        border-color: #fff;
+    }
+
+    5% {
+        box-shadow: 0 0 4px var(--color_1),
+            0 0 4px var(--color_1) inset,
+            0 0 20px var(--color_2),
+            0 0 20px var(--color_2) inset,
+            0 0 48px var(--color_5),
+            0 0 64px var(--color_5) inset;
+        text-shadow: 1px 1px 2px var(--color_1),
+            -1px -1px 2px var(--color_1),
+            -1px 1px 2px var(--color_1),
+            1px -1px 2px var(--color_1),
+            1px 1px 30px var(--color_3),
+            -1px -1px 30px var(--color_3),
+            -1px 1px 30px var(--color_3),
+            1px -1px 30px var(--color_3),
+            1px 1px 50px var(--color_5),
+            -1px -1px 50px var(--color_5),
+            -1px 1px 50px var(--color_5),
+            1px -1px 50px var(--color_5);
+        color: #fff;
+        border-color: #fff;
+    }
+
+    6% {
+        box-shadow: 0 0 4px transparent,
+            0 0 4px transparent inset,
+            0 0 20px var(--color_4),
+            0 0 20px var(--color_4) inset,
+            0 0 48px var(--color_6),
+            0 0 64px var(--color_6) inset;
+        text-shadow: 1px 1px 2px transparent,
+            -1px -1px 2px transparent,
+            -1px 1px 2px transparent,
+            1px -1px 2px transparent,
+            1px 1px 30px var(--color_4),
+            -1px -1px 30px var(--color_4),
+            -1px 1px 30px var(--color_4),
+            1px -1px 30px var(--color_4),
+            1px 1px 50px var(--color_6),
+            -1px -1px 50px var(--color_6),
+            -1px 1px 50px var(--color_6),
+            1px -1px 50px var(--color_6);
+        color: #555;
+        border-color: #555;
+    }
+
+    12% {
+        box-shadow: 0 0 4px transparent,
+            0 0 4px transparent inset,
+            0 0 20px var(--color_4),
+            0 0 20px var(--color_4) inset,
+            0 0 48px var(--color_6),
+            0 0 64px var(--color_6) inset;
+        text-shadow: 1px 1px 2px transparent,
+            -1px -1px 2px transparent,
+            -1px 1px 2px transparent,
+            1px -1px 2px transparent,
+            1px 1px 30px var(--color_4),
+            -1px -1px 30px var(--color_4),
+            -1px 1px 30px var(--color_4),
+            1px -1px 30px var(--color_4),
+            1px 1px 50px var(--color_6),
+            -1px -1px 50px var(--color_6),
+            -1px 1px 50px var(--color_6),
+            1px -1px 50px var(--color_6);
+        color: #555;
+        border-color: #555;
+    }
+
+    13% {
+        box-shadow: 0 0 4px var(--color_1),
+            0 0 4px var(--color_1) inset,
+            0 0 20px var(--color_2),
+            0 0 20px var(--color_2) inset,
+            0 0 48px var(--color_5),
+            0 0 64px var(--color_5) inset;
+        text-shadow: 1px 1px 2px var(--color_1),
+            -1px -1px 2px var(--color_1),
+            -1px 1px 2px var(--color_1),
+            1px -1px 2px var(--color_1),
+            1px 1px 30px var(--color_3),
+            -1px -1px 30px var(--color_3),
+            -1px 1px 30px var(--color_3),
+            1px -1px 30px var(--color_3),
+            1px 1px 50px var(--color_5),
+            -1px -1px 50px var(--color_5),
+            -1px 1px 50px var(--color_5),
+            1px -1px 50px var(--color_5);
+        color: #fff;
+        border-color: #fff;
+    }
+
+    14% {
+        box-shadow: 0 0 4px var(--color_1),
+            0 0 4px var(--color_1) inset,
+            0 0 20px var(--color_2),
+            0 0 20px var(--color_2) inset,
+            0 0 48px var(--color_5),
+            0 0 64px var(--color_5) inset;
+        text-shadow: 1px 1px 2px var(--color_1),
+            -1px -1px 2px var(--color_1),
+            -1px 1px 2px var(--color_1),
+            1px -1px 2px var(--color_1),
+            1px 1px 30px var(--color_3),
+            -1px -1px 30px var(--color_3),
+            -1px 1px 30px var(--color_3),
+            1px -1px 30px var(--color_3),
+            1px 1px 50px var(--color_5),
+            -1px -1px 50px var(--color_5),
+            -1px 1px 50px var(--color_5),
+            1px -1px 50px var(--color_5);
+        color: #fff;
+        border-color: #fff;
+    }
+
+    17% {
+        box-shadow: 0 0 4px transparent,
+            0 0 4px transparent inset,
+            0 0 20px var(--color_4),
+            0 0 20px var(--color_4) inset,
+            0 0 48px var(--color_6),
+            0 0 64px var(--color_6) inset;
+        text-shadow: 1px 1px 2px transparent,
+            -1px -1px 2px transparent,
+            -1px 1px 2px transparent,
+            1px -1px 2px transparent,
+            1px 1px 30px var(--color_4),
+            -1px -1px 30px var(--color_4),
+            -1px 1px 30px var(--color_4),
+            1px -1px 30px var(--color_4),
+            1px 1px 50px var(--color_6),
+            -1px -1px 50px var(--color_6),
+            -1px 1px 50px var(--color_6),
+            1px -1px 50px var(--color_6);
+        color: #555;
+        border-color: #555;
+    }
+
+    40% {
+        box-shadow: 0 0 4px transparent,
+            0 0 4px transparent inset,
+            0 0 20px var(--color_4),
+            0 0 20px var(--color_4) inset,
+            0 0 48px var(--color_6),
+            0 0 64px var(--color_6) inset;
+        text-shadow: 1px 1px 2px transparent,
+            -1px -1px 2px transparent,
+            -1px 1px 2px transparent,
+            1px -1px 2px transparent,
+            1px 1px 30px var(--color_4),
+            -1px -1px 30px var(--color_4),
+            -1px 1px 30px var(--color_4),
+            1px -1px 30px var(--color_4),
+            1px 1px 50px var(--color_6),
+            -1px -1px 50px var(--color_6),
+            -1px 1px 50px var(--color_6),
+            1px -1px 50px var(--color_6);
+        color: #555;
+        border-color: #555;
+    }
+
+    41% {
+        box-shadow: 0 0 4px var(--color_1),
+            0 0 4px var(--color_1) inset,
+            0 0 20px var(--color_2),
+            0 0 20px var(--color_2) inset,
+            0 0 48px var(--color_5),
+            0 0 64px var(--color_5) inset;
+        text-shadow: 1px 1px 2px var(--color_1),
+            -1px -1px 2px var(--color_1),
+            -1px 1px 2px var(--color_1),
+            1px -1px 2px var(--color_1),
+            1px 1px 30px var(--color_3),
+            -1px -1px 30px var(--color_3),
+            -1px 1px 30px var(--color_3),
+            1px -1px 30px var(--color_3),
+            1px 1px 50px var(--color_5),
+            -1px -1px 50px var(--color_5),
+            -1px 1px 50px var(--color_5),
+            1px -1px 50px var(--color_5);
+        color: #fff;
+        border-color: #fff;
+    }
+
+    100% {
+        box-shadow: 0 0 4px var(--color_1),
+            0 0 4px var(--color_1) inset,
+            0 0 20px var(--color_2),
+            0 0 20px var(--color_2) inset,
+            0 0 48px var(--color_5),
+            0 0 64px var(--color_5) inset;
+        text-shadow: 1px 1px 2px var(--color_1),
+            -1px -1px 2px var(--color_1),
+            -1px 1px 2px var(--color_1),
+            1px -1px 2px var(--color_1),
+            1px 1px 30px var(--color_3),
+            -1px -1px 30px var(--color_3),
+            -1px 1px 30px var(--color_3),
+            1px -1px 30px var(--color_3),
+            1px 1px 50px var(--color_5),
+            -1px -1px 50px var(--color_5),
+            -1px 1px 50px var(--color_5),
+            1px -1px 50px var(--color_5);
+        color: #fff;
+        border-color: #fff;
+    }
+}
+
+/* 本体とは関係ないスタイル */
+.neon {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    position: relative;
+    text-align: center;
+}
+
+.button:not {
+    margin-bottom: 40px;
+}

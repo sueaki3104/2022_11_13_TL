@@ -1,0 +1,289 @@
+/* :root は CSS の擬似クラスで、文書を表すツリーのルート要素を
+選択します。 HTML では :root は <html>要素を表し、
+詳細度が高いことを除けば html セレクターと同等です。 */
+/*接頭辞 -- が付いたプロパティ名、例えば --example-name は、
+カスタムプロパティを表し、 var() 関数を用いて他の宣言の中で
+使用することができる値を持ちます。*/
+:root {
+    --bg: #010710;
+    --color: #ff67fc;
+}
+
+/* ----------------------------------------
+いろいろな図形とは関係のない枠組み部分
+----------------------------------------*/
+.whole {
+    display: flex;
+    /* その領域のコンテナーに対して display プロパティの値を
+    flex もしくは inline-flex に設定します。またこれにより、
+    このコンテナー直下の子要素がフレックスアイテムとなります。 */
+    gap: 15px;
+    /* gap は CSS のプロパティで、行や列の間のすき間 (溝) を
+    定義します。これは row-gap および column-gap の一括
+    指定です。 */
+    flex-wrap: wrap;
+    /* flex-wrap は CSS のプロパティで、フレックスアイテムを
+    単一行に押し込むか、あるいは複数行に折り返してもよいかを
+    指定します。折り返しを許可する場合は、行を積み重ねる方向の
+    制御も可能です。 */
+    justify-content: center;
+    /* CSS の justify-content プロパティは、フレックス
+    コンテナーの主軸およびグリッドコンテナーのインライン軸に
+    沿って、中身のアイテムの間や周囲に間隔を配置する方法を
+    定義します。 */
+    align-content: center;
+    /* CSS の align-content プロパティは、フレックス
+    ボックスの交差軸またはグリッドのブロック軸方向の内部の
+    アイテムの間または周囲の空間の配分方法を設定します。 */
+    box-sizing: border-box;
+    /* box-sizing は CSS のプロパティで、要素の全体の
+    幅と高さをどのように計算するのかを設定します。 */
+    border: 20mm ridge rgba(50, 13, 236, 0.6);
+    /* border は CSS の 一括指定プロパティで、要素の境界を
+    設定します。これは border-width,border-style,
+    border-color の値を設定します。 */
+    width: 100%;
+    /* width は CSS のプロパティで、要素の幅を設定します。
+    既定では、このプロパティはコンテンツ領域の幅を設定しますが、
+    box-sizing を border-box に設定すると、境界領域の幅を
+    設定します。 */
+    padding: 80px;
+    /* padding は CSS の一括指定プロパティで、要素の
+    全四辺のパディング領域を一度に設定します。 */
+    background-color: rgb(238, 243, 247);
+    /* CSS の background-color プロパティは、要素の
+    背景色を設定します。 */
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    /* border-radius は CSS のプロパティで、要素の境界の
+    外側の角を丸めます。1 つの半径を設定すると円の角になり、
+    2つの半径を設定すると楕円の角になります。 */
+    background: var(--bg);
+}
+
+strong{
+    color: #f50404;
+}
+
+h2{
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+/* 円形 */
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* 外側の角を50％丸めます */
+    background: var(--color);
+}
+
+/* 三角形 borderプロパティだけで作る*/
+.triangle {
+    border-left: solid 50px transparent;
+    /* transparent 要素を透明にする */
+    border-right: solid 50px transparent;
+    border-bottom: solid 86.6025px var(--color);
+}
+
+/* 四角形 */
+.square {
+    width: 100px;
+    height: 100px;
+    background: var(--color);
+}
+
+/* マル */
+.ok {
+    width: 100px;
+    height: 100px;
+    border: solid 10px var(--color);
+    /* マルの枠線を表示させることで真ん中を空白にできる */
+    box-sizing: border-box;
+    border-radius: 50px;
+}
+
+/* ----------------------------------------
+
+reversalButton
+
+---------------------------------------- */
+#nb-check {
+    display: none;
+}
+
+.reversalButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+}
+
+.reversalButton::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.reversalButton__check {
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    font-size: 14px;
+    padding: 4px 16px 4px 40px;
+    margin-bottom: 24px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    background: #783fff;
+    transition: all ease .3s;
+}
+
+.reversalButton__check::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 8px;
+    bottom: 0;
+    margin: auto 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background: #fff;
+}
+
+.reversalButton__check::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 8px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-left: solid 4px #783fff;
+    border-bottom: solid 4px #783fff;
+    opacity: 0;
+    transform-origin: top left;
+    transform: rotate(-45deg);
+}
+
+#nb-check:checked~.reversalButton__check::after {
+    animation: check ease .3s;
+    animation-fill-mode: forwards;
+}
+
+#nb-check:checked~.reversalButton__check {
+    color: #696980;
+    background: #b3b3c5;
+}
+
+@keyframes check {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    30% {
+        width: 0;
+        height: 10px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 16px;
+        height: 10px;
+        opacity: 1;
+    }
+}
+
+.reversalButton__button {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    min-height: 64px;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 8px 48px;
+    color: #fff;
+    background: #783fff;
+    transition: all ease .3s;
+    overflow: hidden;
+}
+
+.reversalButton__button::before {
+    content: 'チェックしないと押せないんだよ';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    color: #696980;
+    background: #b3b3c5;
+    transition: all ease .7s;
+}
+
+.reversalButton__button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 32px;
+    bottom: 0;
+    margin: auto 0;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border-top: solid 3px #fff;
+    border-right: solid 3px #fff;
+    transform: rotate(45deg);
+    transition: all ease .3s;
+}
+
+#nb-check:checked~.reversalButton__button::before {
+    left: 100%;
+}
+
+#nb-check:checked~.reversalButton__button {
+    z-index: 3;
+}
+
+#nb-check:checked~.reversalButton__button:hover {
+    opacity: .7;
+}
+
+#nb-check:checked~.reversalButton__button:hover::after {
+    right: 24px;
+}

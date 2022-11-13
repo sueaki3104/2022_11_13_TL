@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/2022_11_13_LT_02_P3.css">
+    <title>ビックリマン　じゃんけんをしよう！</title>
+</head>
+
+<body>
+    <header>
+        <div><img src="../picture/bikkuri_zeus.jpg" width="150px" height="150px" alt="zeus"></div>
+        <div>
+            <h2>✊✌️🖐2022　ビックリマン　じゃんけん福岡大会✊✌️🖐</h2>
+            <p>君はそもそも　ビックリマン　を知っているのか？</p>
+            <p>知らない君は人生を損している！かも？</p>
+        </div>
+        <div><img src="../picture/bikkuri_devil.jpg" width="150px" height="150px" alt="devil"></div>
+    </header>
+
+    <div class="explanation">
+        <h2>ビックリマンとは？</h2>
+        <p>１９８５年に発売され一大ブームを巻き起こした元祖トレーディングシール</p>
+        <p>天使、悪魔、お守りの３つの種族が存在する三すくみ構造</p>
+        <p>そう　ジャンケンと同じ三すくみ</p>
+        <p>天使か悪魔かお守りを選んで、冒険の世界に旅立とう！</p>
+    </div>
+
+    <main>
+        <div class="btn">
+            <button class="start_btn">冒険に出発する</button>
+            <button class="stop_btn">やらずに帰る</button>
+        </div>
+        <div class="p_select">
+            <h2 class="main_h2">どのシールを選びますか？（シールをクリックして下さい）</h2>
+            <ul>
+                <li id="gu_btn"> <img src="../picture/bikkuri_momotarou.jpg" width="200px" height="200px" alt="桃太郎">
+                </li>
+                <li id="cho_btn"> <img src="../picture/bikkuri_kibidanngo.jpg" width="200px" height="200px"
+                        alt="きびだんごさんすけ">
+                </li>
+                <li id="par_btn"> <img src="../picture/bikkuri_oni.jpg" width="200px" height="200px" alt="鬼ヶ島"></li>
+            </ul>
+        </div>
+
+        <div class="winner">
+            <div>
+                <div class="sheal">あなたのシール</div>
+                <div class="poyon"><img src="" alt="" id="your_hand" width="200px" height="200px"></div>
+            </div>
+            <div class="VS" style="width: 100px;">VS</div>
+            <div>
+                <div class="sheal">COMのシール</div>
+                <div class="poyon"><img src="" alt="" id="com_hand" width="200px" height="200px"></div>
+            </div>
+        </div>
+        <br>
+        <div id="result" class="result">あなたのシールは？</div>
+
+        <div class="reversalButton">
+            <input type="checkbox" id="nb-check">
+            <label for="nb-check" class="reversalButton__check">さていよいよ最後のページだ！</label>
+            <a href="#" class="reversalButton__button"
+                onclick="location.href='./2022_11_13_LT_03_LAST.html'">いざ！天聖界へ</a>
+        </div>
+    </main>
+
+    <!-- from action は、どのファイルを参照するかを書くので今は無視 -->
+    <!-- methodは、送信する時のルール　　この２つの属性はformの心臓 -->
+    <section class="sec_form">
+        <div class="sec_inner">
+            <!-- iタグがうまく表示されないのはなぜ？ -->
+            <h2><i class="fa-sharp fa-solid fa-envelope"></i>君の好きなシールについて教えてくれ！</h2>
+            <p>今後のキャラクー開発の参考にするからな！</p>
+            <P>キャラクターのことを忘れていたらデータベースへアクセスだ！</P>
+            <p><a href="https://www.lotte.co.jp/products/brand/bikkuri_man/bmsearch/">データベース</a></p>
+            <form action="" method="post">
+                <!-- input type=”text" は１行 -->
+                <!-- placeholder　は後ろの隠し文字 -->
+                <!-- style で幅変更等ができます -->
+                <!-- label　でタイトルをクリックしても入力欄に移動できる labelのforはidの名前と紐づけられている-->
+                <label for="name"></label>
+                <input id=name type="text" name="your_name" placeholder="名前を書いてください" style=width:600px;>
+                <br>
+                <label for="num"></label>
+                <input id=num type="number" name="tel" placeholder="電話番号を半角数字のみで入力してください" style=width:600px;>
+                <br>
+                <label for="email"></label>
+                <input id=email type="email" name="email" placeholder="aaa@aaa.co.jp" style=width:600px;>
+                <br>
+                <fieldset>
+                    <legend>次の４つのヘッドのうち好きなヘッドにチェックを入れてくれ（何個でもOK）</legend>
+                    <div class="checkbox">
+                        <input type="checkbox" name="checkbox" id="superzeus">
+                        <label for="superzeus">スーパーゼウス</label>
+                        <br>
+                        <input type="checkbox" name="checkbox" id="superdevil">
+                        <label for="superzeus">始祖ジュラ</label>
+                        <br>
+                        <input type="checkbox" name="checkbox" id="blackzeus">
+                        <label for="superzeus">ブラックゼウス</label>
+                        <br>
+                        <input type="checkbox" name="checkbox" id="headrokoko">
+                        <label for="superzeus">ヘッドロココ</label>
+                    </div>
+                    <ul>
+                        <li><img src="../picture/bte007.jpg" alt="" width="135px" height="135px"></li>
+                        <li><img src="../picture/bak009.jpg" alt="" width="135px" height="135px"></li>
+                        <li><img src="../picture/bak001.jpg" alt="" width="135px" height="135px"></li>
+                        <li><img src="../picture/bte002.jpg" alt="" width="135px" height="135px"></li>
+                    </ul>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend> 次の４つのヘッドのうち１番好きなヘッドにチェックを入れてくれ（１つだけだぞ！）</legend>
+                    <div><input type="radio" name="radio" id="herakuraisuto">
+                        <label for="herakuraisuto">ヘラクライスト</label>
+                        <input type="radio" name="radio" id="masyounero">
+                        <label for="herakuraisuto">サタンマリア</label>
+                        <input type="radio" name="radio" id="masyounero">
+                        <label for="masyounero">ネロ魔身</label>
+                        <input type="radio" name="radio" id="seintophenix">
+                        <label for="seintophenix">聖フェニックス</label>
+                    </div>
+                    <ul>
+                        <li><img src="../picture/bte006.jpg" alt="" width="135px" height="135px"></li>
+                        <li><img src="../picture/bak005.jpg" alt="" width="135px" height="135px"></li>
+                        <li><img src="../picture/bak006.jpg" alt="" width="135px" height="135px"></li>
+                        <li><img src="../picture/bte016.jpg" alt="" width="135px" height="135px"></li>
+                    </ul>
+                </fieldset>
+                <br>
+                <label for="inquily"></label>
+                <textarea id=inquily type="text" name="inquily"
+                    placeholder="あなたの好きな”ヘッドの名前をここに記入してください（シークレットミッション）あなたの好きなヘッドシールの画像をプレゼントするぞ！”"
+                    style="width: 600px; height: 200px;">ここに書いてある文字を消してくれたらいいことがあるかもよ？</textarea>
+                <br>
+                <div>
+                    <!--date転送先はとりあえずです PHP勉強しないと出来ないっぽい？ -->
+                    <div><a href="https://a-omega.co.jp/companyinfo/"><input class="input_btn" type="button"
+                                value="メッセージを送信する" style="width: 400px;"></a></div>
+                    <div><a href="https://a-omega.co.jp/companyinfo/"><input class="input_pic" type="image"
+                                src="../picture/submit.jpg" alt="クリア送神" style="width: 150px; height: 150px;"></a></div>
+                </div>
+                <!-- <button>メッセージを送信しちゃうんだなぁ<img src="../01_js_omikuji_sample/img/submit.jpg" alt="送信ボタン部分"></button> -->
+            </form>
+        </div>
+    </section>
+
+    <div class="map">
+        <h2>もし家が近いなら本社ビルに遊びに来てくれ！</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.71856261903!2d139.6839236150423!3d35.68393123743168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f32c2a23f2f7%3A0xa52d5e6f5557ca04!2z44CSMTYwLTAwMjMg5p2x5Lqs6YO95paw5a6_5Yy66KW_5paw5a6_77yT5LiB55uu77yS77yQ4oiS77yRIOODreODg-ODhuacrOekvuODk-ODqw!5e0!3m2!1sja!2sjp!4v1667120315897!5m2!1sja!2sjp"
+            width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe></iframe>
+    </div>
+
+    <a class="pagetop" href="#">
+        <div class="pagetop__arrow"></div>
+    </a>
+
+    <footer>
+        <div><img src="../picture/bikkuriman_blackzeus.jpg" width="150px" height="150px" alt="blackzeus"></div>
+        ✊✌️🖐2022　ビックリマン　じゃんけん福岡大会✊✌️🖐実行委員会✊✌️🖐
+        <div><img src="../picture/bikkuriman_headrokoko.jpg" width="150px" height="150px" alt="rokoko"></div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        //ここに処理を追加
+        $(".p_select").hide();
+        $(".winner").hide();
+        $(".result").hide();
+        $(".reversalButton").hide();
+        //ここにこの指示をすることによって、最初から非表示にしている
+        // 冒険に出発するボタンを押した後の画面転換を指示
+        $(".start_btn").click(function () {
+            alert("冒険は怖いけど大丈夫ですか？") //ボタンを押したらアラーム表示
+            $(this).hide(500); //start_btnを非表示にする
+            $(".p_select").show(500);//冒険の始まりだ！以下を表示させる
+            $(".explanation").hide(500);//説明(explanation)の項目を非表示にする
+            $(".stop_btn").hide(500); //stop_btnを非表示にする
+            $(".sec_form").hide(500); //sec_formを非表示にする
+            $("header").hide(500);
+            $("footer").hide(500);
+            $(".map").hide(500);
+            $(".winner").show(500);
+            $(".result").show(500);
+            $(".reversalButton").show(500);
+            $(".bte").hide(500);
+        });
+        // やらずに帰るボタンを押したユーザーにアラームを出す
+        $(".stop_btn").click(function () {
+            alert("やらないのは。。困るんです😭　冒険に出発する　を押してね！")
+        });
+
+        // 桃太郎をユーザーが押した時
+        $('#gu_btn').on('click', function () {
+            // クリックしたボタンの表示をplayerという変数に入れる
+            let player = $(this).html();
+            $("#your_hand").attr('src', '../picture/bikkuri_momotarou.jpg');
+            // 乱数を使ってCOMのジャンケンを出す
+            const min = 0;
+            const max = 2;
+            const randamNumber0 = Math.floor(Math.random() * (max - min + 1));
+            console.log(randamNumber0);
+
+            if (randamNumber0 === 0) {
+                // $("#your_hand").text('あなたの出した手は？ ✊グー');
+                // $("#com_hand").text('コンピュータの出した手は？ ✊グー');
+                $("#com_hand").attr('src', '../picture/bikkuri_momotarou.jpg');
+                $("#result").text('あいこです');
+            } else if (randamNumber0 === 1) {
+                // $("#com_hand").text('コンピュータの出した手は？ ✌️チョキ');
+                $("#com_hand").attr('src', '../picture/bikkuri_kibidanngo.jpg');
+                $("#result").text('あなたの勝ちです😁');
+            } else if (randamNumber0 === 2) {
+                // $("#com_hand").text('コンピュータの出した手は？ ✋パー');
+                $("#com_hand").attr('src', '../picture/bikkuri_oni.jpg');
+                $("#result").text('あなたの負けです😭');
+            }
+        });
+
+
+        // きびだんごすけをユーザーが押した時
+        $('#cho_btn').on('click', function () {
+            $("#your_hand").attr('src', '../picture/bikkuri_kibidanngo.jpg');
+            // 乱数を使ってCOMのジャンケンを出す
+            const min = 0;
+            const max = 2;
+            const randamNumber1 = Math.floor(Math.random() * (max - min + 1));
+            console.log(randamNumber1);
+
+            if (randamNumber1 === 0) {
+                // $("#com_hand").text('コンピュータの出した手は？ ✊グー');
+                $("#com_hand").attr('src', '../picture/bikkuri_momotarou.jpg');
+                $("#result").text('あなたの負けです😭');
+            } else if (randamNumber1 === 1) {
+                // $("#com_hand").text('コンピュータの出した手は？ ✌️チョキ');
+                $("#com_hand").attr('src', '../picture/bikkuri_kibidanngo.jpg');
+                $("#result").text('あいこです');
+            } else if (randamNumber1 === 2) {
+                // $("#com_hand").text('コンピュータの出した手は？ ✋パー');
+                $("#com_hand").attr('src', '../picture/bikkuri_oni.jpg');
+                $("#result").text('あなたの勝ちです😁');
+
+            }
+        });
+
+        //鬼ヶ島をユーザーが押した時
+        $('#par_btn').on('click', function () {
+            $("#your_hand").attr('src', '../picture/bikkuri_oni.jpg');
+            // 乱数を使ってCOMのジャンケンを出す
+            const min = 0;
+            const max = 2;
+            const randamNumber2 = Math.floor(Math.random() * (max - min + 1));
+            console.log(randamNumber2);
+
+            if (randamNumber2 === 0) {
+                // $("#com_hand").text('コンピュータの出した手は？ ✊グー');
+                $("#com_hand").attr('src', '../picture/bikkuri_momotarou.jpg');
+                $("#result").text('あなたの勝ちです😁');
+            } else if (randamNumber2 === 1) {
+                // $("#com_hand").text('コンピュータの出した手は？ ✌️チョキ');
+                $("#com_hand").attr('src', '../picture/bikkuri_kibidanngo.jpg');
+                $("#result").text('あなたの負けです😭');
+            } else if (randamNumber2 === 2) {
+                // $("#com_hand").text('コンピュータの出した手は？ ✋パー');
+                $("#com_hand").attr('src', '../picture/bikkuri_oni.jpg');
+                $("#result").text('あいこです');
+            }
+
+
+        });
+    </script>
+
+    <script>
+        //　メッセージを送信　ボタンを押したときのアラームの設定
+        $(".input_btn").click(function () {
+            alert("メッセージを【送信】と【送神】をかけたんだけど分かったかな？") //ボタンを押したらアラーム表示
+        });
+
+        $(".input_pic").click(function () {
+            alert("画像をボタンにしてみたぞ！ただの自己満足だ") //ボタンを押したらアラーム表示
+        });
+    </script>
+
+</body>
+
+</html>

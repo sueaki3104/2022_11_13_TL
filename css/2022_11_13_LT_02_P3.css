@@ -1,0 +1,370 @@
+body{
+    display: block;
+    margin: 8px;
+}
+
+header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.explanation{
+    text-align: center;
+    background-color: rgb(228, 237, 153);
+    padding: 20px;
+}
+
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+
+li{
+    border: 1px black solid;
+}
+
+.main_h2{
+    text-align: center;
+}
+
+.btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.start_btn{
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    cursor: progress;
+}
+.stop_btn {
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    cursor: progress;
+}
+footer{
+    background-color: rgb(19, 179, 243);
+    text-align: center;
+    height: 100px;
+}
+
+.sec_form{
+    background:#ebba4d;
+    text-align: center;
+}
+
+/* 枠を860pxに設定　真ん中に寄せたいのでmargin 0 auto */
+.sec_inner{
+    width: 860px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sec_inner textarea {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.sec_inner input {
+    height: 50px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 10px;
+    color: blue;
+}
+
+.input_btn{
+    background-color: #da6b64;
+    font-size: 20px;
+    cursor: progress;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    height: 160px;
+}
+
+.checkbox{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.iframe-wrp {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    /* = height ÷ width × 100 */
+}
+
+.map {
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.winner{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 80px;
+    font-size: 20px;
+}
+
+.result{
+    font-size: 20px;
+    color: #0b0a0a;
+}
+
+.VS{
+    font-size: 60px;
+}
+
+.sheal{
+    font-size: 25px;
+    text-align: center;
+}
+
+.result{
+    font-size: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pagetop {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: #fff;
+    border: solid 2px #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 30%);
+}
+
+.pagetop__arrow {
+    height: 10px;
+    width: 10px;
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+    transform: translateY(20%) rotate(-45deg);
+}
+
+.poyon{animation: poyoyon 3s ease-in-out 1 forwards;}
+    @keyframes poyoyon {
+        0% {transform: scale(1.0, 1.0) translate(0, 0);}
+        15% {transform: scale(0.98, 0.9) translate(0, 5px);}
+        30% {transform: scale(1.02, 1.0) translate(0, 8px);}
+        50% {transform: scale(0.98, 1.05) translate(0, -8px);}
+        70% {transform: scale(1.0, 0.9) translate(0, 5px);}
+        100% {transform: scale(1.0, 1.0) translate(0, 0);}
+            0%,
+            100% {opacity: 1;}
+        }
+
+/* ----------------------------------------
+
+reversalButton
+
+---------------------------------------- */
+#nb-check {
+    display: none;
+}
+
+.reversalButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+}
+
+.reversalButton::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.reversalButton__check {
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    font-size: 14px;
+    padding: 4px 16px 4px 40px;
+    margin-bottom: 24px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    background: #783fff;
+    transition: all ease .3s;
+}
+
+.reversalButton__check::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 8px;
+    bottom: 0;
+    margin: auto 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background: #fff;
+}
+
+.reversalButton__check::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 8px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-left: solid 4px #783fff;
+    border-bottom: solid 4px #783fff;
+    opacity: 0;
+    transform-origin: top left;
+    transform: rotate(-45deg);
+}
+
+#nb-check:checked~.reversalButton__check::after {
+    animation: check ease .3s;
+    animation-fill-mode: forwards;
+}
+
+#nb-check:checked~.reversalButton__check {
+    color: #696980;
+    background: #b3b3c5;
+}
+
+@keyframes check {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    30% {
+        width: 0;
+        height: 10px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 16px;
+        height: 10px;
+        opacity: 1;
+    }
+}
+
+.reversalButton__button {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    min-height: 64px;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 8px 48px;
+    color: #fff;
+    background: #783fff;
+    transition: all ease .3s;
+    overflow: hidden;
+}
+
+.reversalButton__button::before {
+    content: 'ゲームが終わったら↑チェックしてね';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    color: #696980;
+    background: #b3b3c5;
+    transition: all ease .7s;
+}
+
+.reversalButton__button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 32px;
+    bottom: 0;
+    margin: auto 0;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border-top: solid 3px #fff;
+    border-right: solid 3px #fff;
+    transform: rotate(45deg);
+    transition: all ease .3s;
+}
+
+#nb-check:checked~.reversalButton__button::before {
+    left: 100%;
+}
+
+#nb-check:checked~.reversalButton__button {
+    z-index: 3;
+}
+
+#nb-check:checked~.reversalButton__button:hover {
+    opacity: .7;
+}
+
+#nb-check:checked~.reversalButton__button:hover::after {
+    right: 24px;
+}
